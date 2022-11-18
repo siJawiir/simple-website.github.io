@@ -45,7 +45,8 @@ img {
   width: 100%;
 }
 
-code, pre {
+code,
+pre {
   background: var(--dark-color);
   color: #fff;
   padding: 8px;
@@ -56,6 +57,10 @@ code, pre {
   background-color: var(--primary-color);
   color: #fff;
   height: 70px;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 1000;
 }
 
 .navbar ul {
@@ -74,6 +79,13 @@ code, pre {
 
 .navbar .flex {
   justify-content: space-between;
+}
+
+.features-head,
+.docs-head,
+.pricing-head,
+.showcase {
+  margin-top: 54px;
 }
 
 /* Showcase */
@@ -199,6 +211,7 @@ code, pre {
 }
 
 /* Features */
+
 .features-head img {
   width: 200px;
   justify-self: flex-end;
@@ -223,15 +236,15 @@ code, pre {
   justify-self: flex-end;
 }
 
-.docs-main ul a{
-  color: #333
+.docs-main ul a {
+  color: #333;
 }
 
-.docs-main h3{
+.docs-main h3 {
   margin: 20px 0;
 }
 
-.docs-main .grid{
+.docs-main .grid {
   grid-template-columns: 1fr 2fr;
   align-items: flex-start;
 }
@@ -243,8 +256,163 @@ code, pre {
   border-bottom: 1px #333 solid;
 }
 
-.docs-main a:hover{
+.docs-main a:hover {
   font-weight: bold;
+}
+
+/* Pricing */
+.pricing-head img {
+  width: 200px;
+  justify-self: flex-end;
+}
+
+.pricing-main .card > i {
+  margin-right: 20px;
+}
+
+.pricing-container .pricing-plan {
+  margin: 0 8px;
+}
+
+.pricing-container .pricing-plan h2 {
+  font-weight: bold;
+}
+
+.pricing-container .pricing-switch-container {
+  position: relative;
+  display: inline-block;
+}
+
+.pricing-container .pricing-switch-container .monthly {
+  position: absolute;
+  left: 32px;
+  top: 16px;
+  pointer-events: none;
+  color: #fff;
+}
+
+.pricing-container .pricing-switch-container .yearly {
+  position: absolute;
+  right: 32px;
+  top: 16px;
+  pointer-events: none;
+  color: #fff;
+}
+
+.pricing-container .pricing-switch {
+  width: 254px;
+  height: 54px;
+  background: var(--primary-color);
+  border-radius: 42px;
+  outline: none;
+  appearance: none;
+  position: relative;
+}
+
+.pricing-container .pricing-switch::before {
+  content: "";
+  position: absolute;
+  height: 40px;
+  width: 120px;
+  border-radius: 24px;
+  background-color: var(--secondary-color);
+  top: 50%;
+  transform: translateY(-50%);
+  left: 8px;
+  transition: 0.2s;
+}
+
+.pricing-container .pricing-switch:checked::before {
+  left: 152px;
+  width: 96px;
+}
+
+.pricing-container .pricing-plan {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pricing-container h2 {
+  margin-right: 32px;
+  font-size: 24px;
+}
+
+.pricing-list .card {
+  background: var(--light-color);
+  padding: 32px;
+  position: relative;
+}
+
+.price-container,
+.pricing-desc,
+.pricing-features {
+  padding: 8px 0px;
+}
+
+.pricing-list .content {
+  margin: 16px 0;
+}
+
+.pricing-list h3 {
+  font-size: 24px;
+}
+
+.pricing-list .best-value .value {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  text-align: center;
+  background: var(--primary-color);
+  border-radius: 12px 12px 0 0;
+  color: #fff;
+  padding: 4px;
+}
+
+.pricing-list .price-container .price {
+  font-size: 48px;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.pricing-list .price-container {
+  display: flex;
+  align-items: center;
+}
+
+.pricing-list .pricing-desc {
+  font-size: 16px;
+}
+
+.pricing-list .pricing-features li {
+  margin: 8px 0;
+}
+
+.pricing-list .pricing-features li::before {
+  margin-right: 8px;
+  margin-top: 4px;
+}
+
+.pricing-list .checked-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+}
+
+.pricing-list .btn-choose-price {
+  background: var(--primary-color);
+  padding: 8px;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  border-radius: 16px;
+  margin-top: 32px;
+}
+
+.pricing-list .btn-choose-price:hover {
+  background: var(--secondary-color);
+  transition: 0.2s;
 }
 
 /* Footer */
@@ -287,16 +455,16 @@ code, pre {
     grid-column: 1;
     grid-row: 1;
   }
-  
+
   .features-head,
   .features-sub-head,
-  .docs-head{
+  .docs-head {
     text-align: center;
   }
 
   .features-head img,
   .features-sub-head img,
-  .docs-head img{
+  .docs-head img {
     justify-self: center;
   }
 }
